@@ -53,7 +53,6 @@ public class Reader {
 				i = i.replaceAll("\n+",",");
 				i = i.replaceFirst(",", "");
 				i = i.substring(0, (i.length() - 1));
-				System.out.println(i);
 				inputList.add(i);
 			}
 		}
