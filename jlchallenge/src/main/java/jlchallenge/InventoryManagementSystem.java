@@ -13,12 +13,13 @@ public class InventoryManagementSystem {
 	
 		Reader reader = new Reader();
 		List<String> checkReader = reader.getInputs("InventoryManagementSystem.txt", "Main");
-		List<String> boxesIDs = new ArrayList<String>(); 	
+		List<String> boxesIDs = new ArrayList<String>();
 		
-		if(args[0] != "1") {
+		if(args.length != 0) {
 			boxesIDs = cleanInput(args[0]);
-		}
-		boxesIDs = cleanInput(checkReader.get(0));	
+		} else {
+			boxesIDs = cleanInput(checkReader.get(0));
+		}	
 		int checksum = calculateChecksum(boxesIDs);
 
 		System.out.println(checksum);

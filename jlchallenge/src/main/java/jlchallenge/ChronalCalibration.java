@@ -11,10 +11,12 @@ public class ChronalCalibration {
 		List<String> checkReader = reader.getInputs("ChronalCalibration.txt", "Main");
 		List<Long> inputList = new ArrayList<Long>();
 		
-		if(args[0] != "1") {
+		if(args.length != 0) {
 			inputList = cleanInput(args[0]);
+		} else{
+			inputList = cleanInput(checkReader.get(0));
 		}
-		inputList = cleanInput(checkReader.get(0));
+		
 		long frequency = calculateFrequency(inputList);
 		System.out.println(frequency);
 

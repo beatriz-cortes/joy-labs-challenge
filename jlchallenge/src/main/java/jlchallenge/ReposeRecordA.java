@@ -10,17 +10,19 @@ import java.util.Map.Entry;
 
 public class ReposeRecordA {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Reader reader = new Reader();
 		List<String> checkReader = reader.getInputs("ReposeRecordA.txt", "Main");
+		String input;
 		
-		if(args[0] != "1") {
-			@SuppressWarnings("unused")
-			String input = args[0];
+		if(args.length != 0) {
+			input = args[0];
+		}else {
+			input = checkReader.get(0);
 		}
-				
-		String input = checkReader.get(0);
+		
 		TreeMap<String, String> orderedIn = parseInput(input);
 		List<Shift> shiftsList = listOfShifts(orderedIn);
 		int sleepiestGuardId = getSleepiestGuardId(shiftsList);
