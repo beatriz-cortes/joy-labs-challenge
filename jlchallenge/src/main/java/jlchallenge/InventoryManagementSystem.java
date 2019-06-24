@@ -12,7 +12,7 @@ public class InventoryManagementSystem {
 	public static void main(String[] args) {
 	
 		Reader reader = new Reader();
-		List<String> checkReader = reader.getInputs("InventoryManagementSystem.txt");
+		List<String> checkReader = reader.getInputs("InventoryManagementSystem.txt", "Main");
 		List<String> boxesIDs = new ArrayList<String>(); 	
 		
 		if(args[0] != "1") {

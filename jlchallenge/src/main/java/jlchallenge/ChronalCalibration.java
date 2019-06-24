@@ -8,14 +8,17 @@ public class ChronalCalibration {
 	public static void main(String[] args) {
 		
 		Reader reader = new Reader();
-		List<String> checkReader = reader.getInputs("ChronalCalibration.txt");
+		List<String> checkReader = reader.getInputs("ChronalCalibration.txt", "Main");
 		List<Long> inputList = new ArrayList<Long>();
+		System.out.println(checkReader.size());
 		
 		if(args[0] != "1") {
 			inputList = cleanInput(args[0]);
 		}
+		System.out.println(checkReader.get(0));
 		inputList = cleanInput(checkReader.get(0));
-		System.out.println(calculateFrequency(inputList));
+		long frequency = calculateFrequency(inputList);
+		System.out.println(frequency);
 
 	}
 	

@@ -10,13 +10,17 @@ import java.util.List;
 
 public class Reader {
 
-	public static  String fileReader(String fileName) {
+	public static  String fileReader(String fileName, String source) {
 	BufferedReader br = null;
 	String everything = "";
 	try {
-		File f = new File("src/main/java/jlchallenge/" + fileName);
-		br = new BufferedReader(new FileReader(f));
-		
+		if (source == "Test") {
+			File f = new File("./src/test/resources/config/" + fileName);
+			br = new BufferedReader(new FileReader(f));
+		}else {
+			File f = new File("./src/main/resources/config/" + fileName);
+			br = new BufferedReader(new FileReader(f));
+		}
 	} catch (FileNotFoundException e) {
 		e.printStackTrace();
 		System.out.println(fileName + "was not found");
@@ -44,9 +48,9 @@ public class Reader {
 	
 }
 	
-	public List<String> getInputs(String fileName){
+	public List<String> getInputs(String fileName, String source){
 		List<String> inputList = new ArrayList<String>();	
-		String fullFile = fileReader(fileName);
+		String fullFile = fileReader(fileName, source);
 		String[] splitedInput = fullFile.split("/");
 		for (String i : splitedInput) {
 			if (i != splitedInput[0]) {

@@ -13,14 +13,14 @@ public class ReposeRecordA {
 	public static void main(String[] args) {
 
 		Reader reader = new Reader();
-		List<String> checkReader = reader.getInputs("ReposeRecordA.txt");
+		List<String> checkReader = reader.getInputs("ReposeRecordA.txt", "Main");
 		
 		if(args[0] != "1") {
 			@SuppressWarnings("unused")
 			String input = args[0];
 		}
 				
-		String input = checkReader.get(1);
+		String input = checkReader.get(0);
 		TreeMap<String, String> orderedIn = parseInput(input);
 		List<Shift> shiftsList = listOfShifts(orderedIn);
 		int sleepiestGuardId = getSleepiestGuardId(shiftsList);
