@@ -16,6 +16,7 @@ public class ReposeRecordA {
 		List<String> checkReader = reader.getInputs("ReposeRecordA.txt", "Main");
 		
 		if(args[0] != "1") {
+			@SuppressWarnings("unused")
 			String input = args[0];
 		}
 				
@@ -98,7 +99,7 @@ public class ReposeRecordA {
 		return minutes;
 	}
 
-	private static int getSleepiestGuardId(List<Shift> shiftsList) {
+	public static int getSleepiestGuardId(List<Shift> shiftsList) {
 	
 		Map<Integer, Integer> idAndCount = new HashMap<>(); 
 		
@@ -129,7 +130,7 @@ public class ReposeRecordA {
 		return sleepiestGuard;
 	}
 	
-	private static int getMostAsleepMinute(List<Shift> shiftsList, int sleepiestGuardId) {
+	public static int getMostAsleepMinute(List<Shift> shiftsList, int sleepiestGuardId) {
 		
 		Map<Integer, Integer> minuteAndCount = new HashMap<>();
 		
