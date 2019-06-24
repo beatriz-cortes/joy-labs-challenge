@@ -18,15 +18,8 @@ public class InventoryManagementSystem {
 		if(args[0] != "1") {
 			boxesIDs = cleanInput(args[0]);
 		}
-		boxesIDs = cleanInput(checkReader.get(0));
-		int[] count = {0,0}, finalCount = {0,0};
-
-		for (String boxID : boxesIDs) {
-			char[] characters = boxID.toCharArray();			
-			finalCount = countMatches(characters, count);
-		}
-		
-		int checksum = finalCount[0] * finalCount[1];
+		boxesIDs = cleanInput(checkReader.get(0));	
+		int checksum = calculateChecksum(boxesIDs);
 
 		System.out.println(checksum);
 		
@@ -73,6 +66,20 @@ public class InventoryManagementSystem {
     	}
     	
         return matchesCount; 
+    }
+    
+    //Getting checksum
+    static int calculateChecksum(List<String> boxesIDs) {
+    	
+    	int[] count = {0,0}, finalCount = {0,0};
+
+		for (String boxID : boxesIDs) {
+			char[] characters = boxID.toCharArray();			
+			finalCount = countMatches(characters, count);
+		}
+		int checksum = finalCount[0] * finalCount[1];
+		return checksum;
+    	
     }
 
 }

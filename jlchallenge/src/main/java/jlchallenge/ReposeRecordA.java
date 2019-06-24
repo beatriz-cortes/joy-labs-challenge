@@ -16,7 +16,6 @@ public class ReposeRecordA {
 		List<String> checkReader = reader.getInputs("ReposeRecordA.txt", "Main");
 		
 		if(args[0] != "1") {
-			@SuppressWarnings("unused")
 			String input = args[0];
 		}
 				
