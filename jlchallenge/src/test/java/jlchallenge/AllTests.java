@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ChronalCalibrationTest.class, InventoryManagementSystemTest.class, ReposeRecordATest.class })
+@SuiteClasses({InventoryManagementSystemTest.class, ReposeRecordATest.class,  ChronalCalibrationTest.class})
 public class AllTests {
 
 }
