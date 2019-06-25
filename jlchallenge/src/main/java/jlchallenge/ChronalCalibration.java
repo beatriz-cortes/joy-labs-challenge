@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ChronalCalibration {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Reader reader = new Reader();
 		List<String> checkReader = reader.getInputs("ChronalCalibration.txt", "Main");
@@ -23,7 +23,7 @@ public class ChronalCalibration {
 	}
 	
 	//method for parsing the input
-	static List<Long> cleanInput(String args) {
+	static List<Long> cleanInput(String args) throws Exception {
 		List<Long> inputList = new ArrayList<Long>();
 		String input = args.replaceAll("\\s+","");
 		String[] splitedInput = input.split(",");
@@ -31,8 +31,7 @@ public class ChronalCalibration {
 			if (isNumeric(i)) {
 				inputList.add(Long.parseLong(i));
 			} else {
-				System.out.println("Input is not valid");
-				System.exit(0);
+				throw new NumberFormatException("Input is not valid");
 			}
 		}
 		return inputList;
